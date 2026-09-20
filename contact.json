@@ -1,5 +1,14 @@
 [
-  {"type":"email","english":"EMAIL","label":"이메일","value":""},
-  {"type":"social","english":"SOCIAL","label":"SNS","value":""},
-  {"type":"store","english":"ONLINE STORE","label":"스토어","value":""}
+  {
+    "type": "phone",
+    "english": "PHONE",
+    "label": "전화",
+    "value": "070-4334-0627"
+  },
+  {
+    "type": "email",
+    "english": "EMAIL",
+    "label": "이메일",
+    "value": "official@snowvalleykorea.com"
+  }
 ]

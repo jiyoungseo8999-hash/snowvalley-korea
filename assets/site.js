@@ -5,7 +5,7 @@ const page = document.body.dataset.page || 'home';
 const links = [['home','index.html','홈'],['about','about.html','내 소개'],['products','products.html','제품'],['story','story/','이야기'],['contact','contact.html','연락하기']];
 const brand = `<a class="brand" href="${sitePath('index.html')}" aria-label="스노우밸리 코리아 홈"><strong>SNOW VALLEY</strong><span>KOREA</span></a>`;
 document.querySelector('[data-header]').innerHTML = `<div class="wrap header-inner">${brand}<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">메뉴</button><nav class="nav" id="main-nav" aria-label="주 메뉴">${links.map(([id,url,label])=>`<a href="${sitePath(url)}"${id===page?' aria-current="page"':''}>${label}</a>`).join('')}</nav></div>`;
-document.querySelector('[data-footer]').innerHTML = `<div class="wrap"><div class="footer-top"><div>${brand}<p class="footer-description">스노우밸리 코리아 · 브랜드와 제품을 소개할 공간</p></div><div class="footer-links">${links.slice(1).map(([,url,label])=>`<a href="${sitePath(url)}">${label}</a>`).join('')}</div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} SNOW VALLEY KOREA</span><span>연락처 정보 준비 중</span></div></div>`;
+document.querySelector('[data-footer]').innerHTML = `<div class="wrap"><div class="footer-top"><div>${brand}<p class="footer-description">스노우밸리 코리아 · 브랜드와 제품을 소개할 공간</p></div><div class="footer-links">${links.slice(1).map(([,url,label])=>`<a href="${sitePath(url)}">${label}</a>`).join('')}</div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} SNOW VALLEY KOREA</span><div class="footer-contacts" data-footer-contacts></div></div></div>`;
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 function closeMenu(){toggle.setAttribute('aria-expanded','false');toggle.textContent='메뉴';nav.classList.remove('is-open');}
@@ -24,4 +24,18 @@ if(storyArea)data('story/posts.json').then(items=>{const sorted=[...items].sort(
 const articleArea=document.querySelector('[data-article]');
 if(articleArea)data('posts.json').then(items=>{const post=items.find(p=>p.id===new URLSearchParams(location.search).get('id'));if(!post){error(articleArea,'요청하신 이야기를 찾을 수 없습니다.');return;}document.title=`${post.title} | 스노우밸리 코리아`;document.querySelector('meta[name="description"]').content=post.summary;articleArea.replaceChildren(el('p','eyebrow',post.category||'STORY'));if(post.status==='preparing')articleArea.append(el('span','tag','준비 중'));articleArea.append(el('h1','',post.title));if(post.date){const t=el('time','',post.date);t.dateTime=post.date;articleArea.append(t);}post.body.forEach(text=>articleArea.append(el('p','',text)));}).catch(()=>error(articleArea,'이야기를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'));
 const contactArea=document.querySelector('[data-contacts]');
-if(contactArea)data('contact.json').then(items=>{contactArea.replaceChildren(...items.map((contact,index)=>{const row=el('div','contact-row');row.append(el('span','eyebrow',String(index+1).padStart(2,'0')));const label=el('div','contact-name');label.append(el('small','',contact.english),el('h2','',contact.label));row.append(label);let url=contact.type==='email'&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.value||'')?`mailto:${contact.value}`:contact.type!=='email'?safeUrl(contact.value,true):null;if(url){const a=el('a','text-link',contact.type==='email'?contact.value:'바로가기 ↗');a.href=url;if(contact.type!=='email'){a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',`${contact.label} (새 탭)`);}row.append(a);}else row.append(el('span','tag','준비 중'));return row;}));}).catch(()=>error(contactArea,'연락처를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'));
+function contactUrl(contact){
+ if(contact.type==='email'&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.value||''))return `mailto:${contact.value}`;
+ if(contact.type==='phone'&&/^[+0-9 ()-]+$/.test(contact.value||''))return `tel:${contact.value.replace(/[ ()-]/g,'')}`;
+ return safeUrl(contact.value,true);
+}
+data('contact.json').then(items=>{
+ const contacts=items.filter(c=>c.value&&contactUrl(c));
+ const footer=document.querySelector('[data-footer-contacts]');
+ contacts.forEach(contact=>{const a=el('a','',contact.value);a.href=contactUrl(contact);a.target='_blank';a.rel='noopener noreferrer';footer.append(a);});
+ if(contactArea)contactArea.replaceChildren(...contacts.map((contact,index)=>{
+  const row=el('div','contact-row');row.append(el('span','eyebrow',String(index+1).padStart(2,'0')));
+  const label=el('div','contact-name');label.append(el('small','',contact.english),el('h2','',contact.label));row.append(label);
+  const a=el('a','button contact-button',`${contact.type==='phone'?'전화 걸기':'이메일 보내기'} · ${contact.value}`);a.href=contactUrl(contact);a.target='_blank';a.rel='noopener noreferrer';row.append(a);return row;
+ }));
+}).catch(()=>{if(contactArea)error(contactArea,'연락처를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.');});
