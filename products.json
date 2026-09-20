@@ -72,8 +72,8 @@
   {
     "id": "aurora-straight",
     "name": "오로라 스트레이트컷",
-    "description": "스트레이트컷 형태의 감자튀김입니다.",
-    "image": "",
+    "description": "3/8인치 스트레이트컷 냉동 감자튀김. 2kg.",
+    "image": "assets/products/aurora-straight.webp",
     "price": null,
     "purchaseUrl": "",
     "featured": false,
@@ -126,16 +126,6 @@
     "image": "assets/products/simple-crinkle.webp",
     "price": null,
     "purchaseUrl": "",
-    "featured": false,
-    "status": "published"
-  },
-  {
-    "id": "potato-stick-original",
-    "name": "스노우벨리 감자스틱 오리지널맛",
-    "description": "10개입 · 200g · 1개",
-    "image": "assets/products/potato-stick-original.jpg",
-    "price": null,
-    "purchaseUrl": "https://www.coupang.com/vp/products/8590213050",
     "featured": false,
     "status": "published"
   }
