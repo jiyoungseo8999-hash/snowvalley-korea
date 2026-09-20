@@ -1,5 +1,142 @@
 [
-  {"id":"product-01","name":"첫 번째 제품","description":"제품의 특징과 자세한 소개를 준비하고 있습니다.","image":"","price":null,"purchaseUrl":"","featured":true,"status":"preparing"},
-  {"id":"product-02","name":"두 번째 제품","description":"제품의 특징과 자세한 소개를 준비하고 있습니다.","image":"","price":null,"purchaseUrl":"","featured":true,"status":"preparing"},
-  {"id":"product-03","name":"세 번째 제품","description":"제품의 특징과 자세한 소개를 준비하고 있습니다.","image":"","price":null,"purchaseUrl":"","featured":true,"status":"preparing"}
+  {
+    "id": "hashbrown-patties",
+    "name": "울트라크리스피 해쉬브라운 패티",
+    "description": "패티 형태의 해쉬브라운. 1,280g · 20개입 / 박스당 12트레이.",
+    "image": "assets/products/hashbrown-patties.webp",
+    "price": null,
+    "purchaseUrl": "https://www.coupang.com/vp/products/9222921941",
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": "hb-stick",
+    "name": "해쉬브라운 스틱",
+    "description": "스틱 형태의 해쉬브라운 제품입니다.",
+    "image": "assets/products/hb-stick.webp",
+    "price": null,
+    "purchaseUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "sweet-potato-fries",
+    "name": "고구마 프라이",
+    "description": "고구마 프라이 제품입니다.",
+    "image": "assets/products/sweet-potato-fries.webp",
+    "price": null,
+    "purchaseUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "max-crunch-55",
+    "name": "맥스크런치 5.5mm",
+    "description": "5.5mm 컷의 맥스크런치 감자튀김입니다.",
+    "image": "assets/products/max-crunch-55.webp",
+    "price": null,
+    "purchaseUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "max-crunch-regular",
+    "name": "맥스크런치 레귤러컷",
+    "description": "레귤러컷 형태의 맥스크런치 감자튀김입니다.",
+    "image": "assets/products/max-crunch-regular.webp",
+    "price": null,
+    "purchaseUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "simple-shoestring",
+    "name": "심플프라이 슈스트링",
+    "description": "얇은 슈스트링 형태의 감자튀김. 2kg / 박스당 6봉.",
+    "image": "assets/products/simple-shoestring.webp",
+    "price": null,
+    "purchaseUrl": "https://www.coupang.com/vp/products/9222853673",
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": "skin-on-wedges",
+    "name": "스노우밸리 웨지스킨온",
+    "description": "껍질을 살린 웨지 형태의 감자튀김입니다.",
+    "image": "assets/products/skin-on-wedges.webp",
+    "price": null,
+    "purchaseUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "aurora-straight",
+    "name": "오로라 스트레이트컷",
+    "description": "스트레이트컷 형태의 감자튀김입니다.",
+    "image": "",
+    "price": null,
+    "purchaseUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "ultra-regular",
+    "name": "울트라크리스피 코티드 레귤러컷",
+    "description": "코팅된 레귤러컷 감자튀김. 2kg / 박스당 6봉.",
+    "image": "assets/products/ultra-regular.webp",
+    "price": null,
+    "purchaseUrl": "https://www.coupang.com/vp/products/8762974082",
+    "featured": true,
+    "status": "published"
+  },
+  {
+    "id": "ultra-cajun",
+    "name": "울트라크리스피 코티드 케이준",
+    "description": "케이준 시즈닝을 더한 감자튀김. 2kg / 박스당 6봉.",
+    "image": "assets/products/ultra-cajun.webp",
+    "price": null,
+    "purchaseUrl": "https://www.coupang.com/vp/products/8762974085",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "ultra-tater-puffs",
+    "name": "울트라크리스피 테이터펍스 맛감자",
+    "description": "포테이토 펍 형태의 맛감자. 2kg / 박스당 6봉.",
+    "image": "assets/products/ultra-tater-puffs.webp",
+    "price": null,
+    "purchaseUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "ultra-shoestring",
+    "name": "울트라크리스피 코티드 슈스트링",
+    "description": "코팅된 슈스트링 감자튀김. 2kg / 박스당 6봉.",
+    "image": "assets/products/ultra-shoestring.webp",
+    "price": null,
+    "purchaseUrl": "https://www.coupang.com/vp/products/8762974081",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "simple-crinkle",
+    "name": "심플프라이 크링클컷",
+    "description": "물결 모양 컷의 감자튀김. 2kg / 박스당 6봉.",
+    "image": "assets/products/simple-crinkle.webp",
+    "price": null,
+    "purchaseUrl": "",
+    "featured": false,
+    "status": "published"
+  },
+  {
+    "id": "potato-stick-original",
+    "name": "스노우벨리 감자스틱 오리지널맛",
+    "description": "10개입 · 200g · 1개",
+    "image": "assets/products/potato-stick-original.jpg",
+    "price": null,
+    "purchaseUrl": "https://www.coupang.com/vp/products/8590213050",
+    "featured": false,
+    "status": "published"
+  }
 ]
