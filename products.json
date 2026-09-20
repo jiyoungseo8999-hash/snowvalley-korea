@@ -1,0 +1,5 @@
+[
+  {"id":"product-01","name":"첫 번째 제품","description":"제품의 특징과 자세한 소개를 준비하고 있습니다.","image":"","price":null,"purchaseUrl":"","featured":true,"status":"preparing"},
+  {"id":"product-02","name":"두 번째 제품","description":"제품의 특징과 자세한 소개를 준비하고 있습니다.","image":"","price":null,"purchaseUrl":"","featured":true,"status":"preparing"},
+  {"id":"product-03","name":"세 번째 제품","description":"제품의 특징과 자세한 소개를 준비하고 있습니다.","image":"","price":null,"purchaseUrl":"","featured":true,"status":"preparing"}
+]
