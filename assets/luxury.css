@@ -58,3 +58,4 @@ body[data-page="home"] .product-card>.text-link{justify-self:start;margin:0}
 .luxury-hero:has(.harvest-video) .luxury-scrim{background:linear-gradient(90deg,#14352Ae8 0%,#14352Aa6 55%,#14352A55 100%)}
 @media(max-width:680px){.luxury-hero:has(.harvest-video){justify-content:center;min-height:calc(100svh - 80px);padding-bottom:110px}.luxury-hero:has(.harvest-video) .luxury-hero-copy{padding-top:48px;padding-bottom:48px}.harvest-video{object-position:55% center}.luxury-hero:has(.harvest-video) .luxury-scrim{background:#14352Ab8}}
 .brand-wordmark img{mix-blend-mode:darken}.brand-wordmark{background:transparent}
+.product-card:nth-child(n) .product-visual{background:radial-gradient(ellipse at center,#ecebe5 0%,#d4d5ce 100%);border:0}
