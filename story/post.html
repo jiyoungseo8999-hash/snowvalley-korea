@@ -194,6 +194,7 @@
     posts.forEach(function(p,i){ if (String(p.id) === id || (p.url && String(p.url).replace(/\.html$/,'') === id)) idx = i; });
     if (idx < 0){ notFound(); return; }
     var post = posts[idx];
+    document.querySelector('.footer').hidden = post.hideFooter === true;
     setMeta(post);if(['first-story-20260829','behind-package-20260829'].includes(post.id)) main.appendChild(el('p','notice','키트 샘플 글입니다. 스노우밸리 코리아의 실제 이야기나 제품 개선 사례가 아닙니다.'));
 
     var art = el('article');
@@ -222,7 +223,7 @@
 
     var prev = posts[idx+1]; // 더 오래된 글
     var next = posts[idx-1]; // 더 최신 글
-    if (prev || next){
+    if (!post.hidePostNavigation && (prev || next)){
       var nav = el('nav','pn');
       function cell(p, cls, label){
         if (!p){ nav.appendChild(el('span')); return; }
