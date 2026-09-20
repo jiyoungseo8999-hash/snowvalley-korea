@@ -39,3 +39,21 @@ data('contact.json').then(items=>{
   const a=el('a','button contact-button',`${contact.type==='phone'?'전화 걸기':'이메일 보내기'} · ${contact.value}`);a.href=contactUrl(contact);a.target='_blank';a.rel='noopener noreferrer';row.append(a);return row;
  }));
 }).catch(()=>{if(contactArea)error(contactArea,'연락처를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.');});
+
+// Motion starts only with a working control and respects live OS preference changes.
+const heroPhoto=document.querySelector('.luxury-hero-photo');
+const motionToggle=document.querySelector('.motion-toggle');
+if(heroPhoto&&motionToggle){
+ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+ let userPaused=false;
+ function syncHeroMotion(){
+  const reduced=reducedMotion.matches;
+  heroPhoto.classList.toggle('motion-enabled',!reduced);
+  heroPhoto.style.animationPlayState=userPaused?'paused':'running';
+  motionToggle.hidden=reduced;
+  motionToggle.textContent=userPaused?'배경 모션 재생':'배경 모션 정지';
+ }
+ motionToggle.addEventListener('click',()=>{userPaused=!userPaused;syncHeroMotion();});
+ reducedMotion.addEventListener('change',syncHeroMotion);
+ syncHeroMotion();
+}

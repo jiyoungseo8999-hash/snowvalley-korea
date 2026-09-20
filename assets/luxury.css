@@ -15,3 +15,12 @@ html{scroll-behavior:auto}body{background:var(--white);color:var(--ink);font-wei
 .product-card h3{min-height:3em}
 @media(max-width:680px){.product-card .product-visual{aspect-ratio:1/1}.product-card h3{min-height:0}}
 .product-card .product-visual{position:relative;padding:0;width:100%;height:auto;min-height:0}.product-card .product-visual img{position:absolute;inset:6%;width:88%;height:88%;max-width:none;max-height:none}
+
+/* One slow zoom. Safe margins retain the full pack at maximum scale. */
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.luxury-hero .hero-secondary{background:transparent;color:var(--white);border-color:var(--white)}
+.luxury-hero-photo{right:3%;width:62%;transform-origin:center}.luxury-hero-photo.motion-enabled{animation:product-breathe 22s ease-in-out infinite alternate}
+@keyframes product-breathe{from{transform:scale(1)}to{transform:scale(1.035)}}
+.motion-toggle{color:var(--white);background:transparent;border:1px solid var(--gold);font:12px 'Noto Sans KR',sans-serif;padding:10px 16px;min-height:44px;cursor:pointer}.luxury-hero-bottom{align-items:center;gap:16px}
+@media(max-width:680px){.luxury-hero{min-height:calc(100svh - 80px);display:block;padding-bottom:90px}.luxury-hero-copy{padding:48px 0 0}.luxury-hero h1{font-size:clamp(36px,11.8vw,46px)}.hero-actions{gap:10px}.hero-actions .button{padding:14px 17px;min-height:52px;font-size:13px}.luxury-hero-photo{position:relative;inset:auto;width:92%;height:auto;margin:22px auto 0;z-index:-1;transform-origin:center}.luxury-scrim{background:linear-gradient(180deg,#14352A 0%,#14352Acc 48%,#14352A22 80%)}.luxury-hero-bottom{bottom:22px;padding-top:14px}.motion-toggle{font-size:11px;padding:8px 10px}.luxury-hero-bottom>span{max-width:16ch;line-height:1.6}}
+@media(prefers-reduced-motion:reduce){.luxury-hero-photo{animation:none!important;transform:none!important}.motion-toggle{display:none!important}}
+@media(max-width:680px){.luxury-hero{display:flex;flex-direction:column;align-items:stretch}.luxury-hero-copy{order:1}.luxury-hero-photo{order:2;flex-shrink:0}}
