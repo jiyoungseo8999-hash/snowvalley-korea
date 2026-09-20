@@ -50,20 +50,27 @@ data('contact.json').then(items=>{
  }));
 }).catch(()=>{if(contactArea)error(contactArea,'연락처를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.');});
 
-// Motion starts only with a working control and respects live OS preference changes.
-const heroPhoto=document.querySelector('.luxury-hero-photo');
+// Harvest video plays only when visible, with user and accessibility controls.
+const heroVideo=document.querySelector('.harvest-video');
 const motionToggle=document.querySelector('.motion-toggle');
-if(heroPhoto&&motionToggle){
+if(heroVideo&&motionToggle){
  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
- let userPaused=false;
- function syncHeroMotion(){
+ let userPaused=false,visible=false,loaded=false,failed=false;
+ heroVideo.muted=true;
+ function syncVideo(){
   const reduced=reducedMotion.matches;
-  heroPhoto.classList.toggle('motion-enabled',!reduced);
-  heroPhoto.style.animationPlayState=userPaused?'paused':'running';
-  motionToggle.hidden=reduced;
-  motionToggle.textContent=userPaused?'배경 모션 재생':'배경 모션 정지';
+  motionToggle.hidden=reduced||failed;
+  if(reduced||userPaused||!visible||document.hidden){heroVideo.pause();return;}
+  if(!loaded){const source=heroVideo.querySelector('source');source.src=source.dataset.src;heroVideo.load();loaded=true;}
+  if(!failed)heroVideo.play().catch(()=>{motionToggle.textContent='영상 재생';});
  }
- motionToggle.addEventListener('click',()=>{userPaused=!userPaused;syncHeroMotion();});
- reducedMotion.addEventListener('change',syncHeroMotion);
- syncHeroMotion();
+ heroVideo.addEventListener('play',()=>motionToggle.textContent='영상 정지');
+ heroVideo.addEventListener('pause',()=>motionToggle.textContent='영상 재생');
+ function videoFailed(){failed=true;heroVideo.pause();heroVideo.removeAttribute('src');heroVideo.load();motionToggle.hidden=true;}
+ heroVideo.querySelector('source').addEventListener('error',videoFailed,{once:true});
+ motionToggle.addEventListener('click',()=>{userPaused=!heroVideo.paused;syncVideo();});
+ new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;syncVideo();},{threshold:0.15}).observe(heroVideo);
+ reducedMotion.addEventListener('change',syncVideo);
+ document.addEventListener('visibilitychange',syncVideo);
+ syncVideo();
 }
