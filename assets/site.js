@@ -2,10 +2,10 @@
 const siteBase = new URL('../', document.currentScript.src);
 const sitePath = path => new URL(path, siteBase).href;
 const page = document.body.dataset.page || 'home';
-const links = [['home','index.html','홈'],['about','about.html','내 소개'],['products','products.html','제품'],['story','story/','이야기'],['contact','contact.html','연락하기']];
+const links = [['home','index.html','홈'],['about','about.html','브랜드 이야기'],['products','products.html','제품'],['story','story/','이야기'],['contact','contact.html','연락하기']];
 const brand = `<a class="brand brand-wordmark" href="${sitePath('index.html')}" aria-label="스노우밸리 코리아 홈"><img src="${sitePath('assets/snowvalley-korea-wordmark.webp')}" alt="SNOWVALLEY KOREA" width="1200" height="400"></a>`;
 document.querySelector('[data-header]').innerHTML = `<div class="wrap header-inner">${brand}<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">메뉴</button><nav class="nav" id="main-nav" aria-label="주 메뉴">${links.map(([id,url,label])=>`<a href="${sitePath(url)}"${id===page?' aria-current="page"':''}>${label}</a>`).join('')}</nav></div>`;
-document.querySelector('[data-footer]').innerHTML = `<div class="wrap"><div class="footer-top"><div>${brand}<p class="footer-description">스노우밸리 코리아 · 브랜드와 제품을 소개할 공간</p></div><div class="footer-links">${links.slice(1).map(([,url,label])=>`<a href="${sitePath(url)}">${label}</a>`).join('')}<a href="https://snowvalleyfood.com/" target="_blank" rel="noopener noreferrer">본사 홈페이지 ↗</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} SNOW VALLEY KOREA</span><div class="footer-contacts" data-footer-contacts></div></div></div>`;
+document.querySelector('[data-footer]').innerHTML = `<div class="wrap"><div class="footer-top"><div>${brand}<p class="footer-description">좋은 감자에, 흔들림 없는 기준.</p></div><div class="footer-links">${links.slice(1).map(([,url,label])=>`<a href="${sitePath(url)}">${label}</a>`).join('')}<a href="https://snowvalleyfood.com/" target="_blank" rel="noopener noreferrer">본사 홈페이지 ↗</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} SNOW VALLEY KOREA</span><div class="footer-contacts" data-footer-contacts></div></div></div>`;
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 function closeMenu(){toggle.setAttribute('aria-expanded','false');toggle.textContent='메뉴';nav.classList.remove('is-open');}
