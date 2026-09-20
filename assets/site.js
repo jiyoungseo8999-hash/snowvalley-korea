@@ -55,13 +55,13 @@ const heroVideo=document.querySelector('.harvest-video');
 const motionToggle=document.querySelector('.motion-toggle');
 if(heroVideo&&motionToggle){
  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
- let userPaused=false,visible=false,loaded=false,failed=false;
+ let userPaused=false,visible=true,failed=false;
  heroVideo.muted=true;
  function syncVideo(){
   const reduced=reducedMotion.matches;
   motionToggle.hidden=reduced||failed;
+  heroVideo.autoplay=!reduced;
   if(reduced||userPaused||!visible||document.hidden){heroVideo.pause();return;}
-  if(!loaded){const source=heroVideo.querySelector('source');source.src=source.dataset.src;heroVideo.load();loaded=true;}
   if(!failed)heroVideo.play().catch(()=>{motionToggle.textContent='영상 재생';});
  }
  heroVideo.addEventListener('play',()=>motionToggle.textContent='영상 정지');
