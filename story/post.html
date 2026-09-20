@@ -214,7 +214,7 @@
     }
     art.appendChild(head);
     art.appendChild(el('hr','rule'));
-    art.appendChild(renderBody(post.body));
+    art.appendChild(renderBody(post.body));if(post.productUrl){var productLink=el('a','text-link','관련 제품 보기 ↗');productLink.href='../products.html';art.appendChild(productLink);}
     var faq = Array.isArray(post.faq) ? post.faq.filter(function(f){ return f && f.q && f.a; }) : [];
     if (faq.length) art.appendChild(renderFaq(faq));
     if (Array.isArray(post.sources) && post.sources.length) art.appendChild(renderSources(post.sources));
