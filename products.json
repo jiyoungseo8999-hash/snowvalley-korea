@@ -7,7 +7,21 @@
     "price": null,
     "purchaseUrl": "https://www.coupang.com/vp/products/9222921941",
     "featured": true,
-    "status": "published"
+    "status": "published",
+    "summary": "패티 형태의 해쉬브라운",
+    "pack": "1,280g · 20개입",
+    "casePack": "박스당 12트레이",
+    "photoFrame": {
+      "width": 900,
+      "height": 619,
+      "bounds": [
+        0,
+        190,
+        900,
+        450
+      ],
+      "outline": null
+    }
   },
   {
     "id": "hb-stick",
@@ -17,7 +31,21 @@
     "price": null,
     "purchaseUrl": "",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "photoFrame": {
+      "width": 729,
+      "height": 900,
+      "bounds": [
+        0,
+        0,
+        729,
+        900
+      ],
+      "outline": null
+    },
+    "summary": "스틱 형태의 해쉬브라운 제품입니다",
+    "pack": "",
+    "casePack": ""
   },
   {
     "id": "sweet-potato-fries",
@@ -27,7 +55,21 @@
     "price": null,
     "purchaseUrl": "",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "photoFrame": {
+      "width": 800,
+      "height": 599,
+      "bounds": [
+        0,
+        38,
+        799,
+        570
+      ],
+      "outline": "0,38 799,68 753,568 12,566"
+    },
+    "summary": "고구마 프라이 제품입니다",
+    "pack": "",
+    "casePack": ""
   },
   {
     "id": "max-crunch-55",
@@ -37,7 +79,21 @@
     "price": null,
     "purchaseUrl": "",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "photoFrame": {
+      "width": 676,
+      "height": 900,
+      "bounds": [
+        68,
+        85,
+        647,
+        810
+      ],
+      "outline": "68,85 320,99 647,85 623,191 630,700 647,804 480,790 300,809 68,809 80,706 79,194"
+    },
+    "summary": "5.5mm 컷의 맥스크런치 감자튀김입니다",
+    "pack": "",
+    "casePack": ""
   },
   {
     "id": "max-crunch-regular",
@@ -47,7 +103,21 @@
     "price": null,
     "purchaseUrl": "",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "photoFrame": {
+      "width": 675,
+      "height": 900,
+      "bounds": [
+        68,
+        85,
+        647,
+        810
+      ],
+      "outline": "68,85 320,99 647,85 623,191 630,700 647,804 480,790 300,809 68,809 80,706 79,194"
+    },
+    "summary": "레귤러컷 형태의 맥스크런치 감자튀김입니다",
+    "pack": "",
+    "casePack": ""
   },
   {
     "id": "simple-shoestring",
@@ -57,7 +127,21 @@
     "price": null,
     "purchaseUrl": "https://www.coupang.com/vp/products/9222853673",
     "featured": true,
-    "status": "published"
+    "status": "published",
+    "summary": "얇은 슈스트링 감자튀김",
+    "pack": "2kg · 1봉",
+    "casePack": "박스당 6봉",
+    "photoFrame": {
+      "width": 675,
+      "height": 900,
+      "bounds": [
+        56,
+        110,
+        633,
+        770
+      ],
+      "outline": "56,124 200,139 608,110 616,210 615,540 630,756 470,741 280,747 56,770 72,649 79,257"
+    }
   },
   {
     "id": "skin-on-wedges",
@@ -67,7 +151,21 @@
     "price": null,
     "purchaseUrl": "",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "photoFrame": {
+      "width": 676,
+      "height": 900,
+      "bounds": [
+        32,
+        155,
+        625,
+        768
+      ],
+      "outline": "32,155 321,165 617,157 601,303 618,671 625,757 300,768 32,758 49,622 41,291"
+    },
+    "summary": "껍질을 살린 웨지 형태의 감자튀김입니다",
+    "pack": "",
+    "casePack": ""
   },
   {
     "id": "aurora-straight",
@@ -77,7 +175,10 @@
     "price": null,
     "purchaseUrl": "",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "summary": "3/8인치 스트레이트컷 냉동 감자튀김",
+    "pack": "2kg",
+    "casePack": ""
   },
   {
     "id": "ultra-regular",
@@ -87,7 +188,21 @@
     "price": null,
     "purchaseUrl": "https://www.coupang.com/vp/products/8762974082",
     "featured": true,
-    "status": "published"
+    "status": "published",
+    "summary": "코팅된 레귤러컷 감자튀김",
+    "pack": "2kg · 1봉",
+    "casePack": "박스당 6봉",
+    "photoFrame": {
+      "width": 701,
+      "height": 900,
+      "bounds": [
+        65,
+        103,
+        656,
+        814
+      ],
+      "outline": "72,103 220,124 370,129 633,127 630,275 649,717 656,813 472,784 303,782 65,812 80,645 82,261"
+    }
   },
   {
     "id": "ultra-cajun",
@@ -97,7 +212,21 @@
     "price": null,
     "purchaseUrl": "https://www.coupang.com/vp/products/8762974085",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "photoFrame": {
+      "width": 675,
+      "height": 900,
+      "bounds": [
+        59,
+        125,
+        603,
+        783
+      ],
+      "outline": "59,125 190,135 407,145 588,128 582,293 586,626 603,782 451,766 210,766 60,778 81,628 76,300"
+    },
+    "summary": "케이준 시즈닝을 더한 감자튀김",
+    "pack": "2kg",
+    "casePack": "박스당 6봉"
   },
   {
     "id": "ultra-tater-puffs",
@@ -107,7 +236,21 @@
     "price": null,
     "purchaseUrl": "",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "photoFrame": {
+      "width": 677,
+      "height": 900,
+      "bounds": [
+        52,
+        171,
+        614,
+        809
+      ],
+      "outline": "58,181 225,190 591,171 590,327 593,691 614,805 468,790 213,806 52,803 68,667 64,330"
+    },
+    "summary": "포테이토 펍 형태의 맛감자",
+    "pack": "2kg",
+    "casePack": "박스당 6봉"
   },
   {
     "id": "ultra-shoestring",
@@ -117,7 +260,21 @@
     "price": null,
     "purchaseUrl": "https://www.coupang.com/vp/products/8762974081",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "photoFrame": {
+      "width": 675,
+      "height": 900,
+      "bounds": [
+        78,
+        150,
+        637,
+        787
+      ],
+      "outline": "78,150 302,166 615,150 606,317 622,656 637,769 434,757 260,766 82,787 105,693 87,347"
+    },
+    "summary": "코팅된 슈스트링 감자튀김",
+    "pack": "2kg",
+    "casePack": "박스당 6봉"
   },
   {
     "id": "simple-crinkle",
@@ -127,6 +284,20 @@
     "price": null,
     "purchaseUrl": "",
     "featured": false,
-    "status": "published"
+    "status": "published",
+    "photoFrame": {
+      "width": 675,
+      "height": 900,
+      "bounds": [
+        78,
+        164,
+        606,
+        790
+      ],
+      "outline": "78,164 273,184 589,173 580,325 591,667 606,757 403,768 211,771 85,790 100,651 97,323"
+    },
+    "summary": "물결 모양 컷의 감자튀김",
+    "pack": "2kg",
+    "casePack": "박스당 6봉"
   }
 ]
